@@ -1,12 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BethanysPieShopHRM.Shared
 {
     public class Employee
     {
         public int EmployeeId { get; set; }
+
+        [Required]
+        [StringLength(50, ErrorMessage = "Too long")]
         public string FirstName { get; set; }
 
+        [Required]
         public string LastName { get; set; }
 
         public DateTime BirthDate { get; set; }
