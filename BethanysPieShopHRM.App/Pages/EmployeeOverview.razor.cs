@@ -31,7 +31,7 @@ namespace BethanysPieShopHRM.App.Pages
 
         public async void AddEmployeeDialog_OnDialogClose()
         {
-            //Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+            Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
             StateHasChanged();
         }
     }
