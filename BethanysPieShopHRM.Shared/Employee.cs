@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BethanysPieShopHRM.Shared
 {
@@ -35,5 +36,10 @@ namespace BethanysPieShopHRM.Shared
 
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        [NotMapped]
+        public byte[] ImageContent { get; set; }
+
+        public string ImageName { get; set; }
     }
 }
