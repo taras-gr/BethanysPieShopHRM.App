@@ -103,11 +103,21 @@
 
 		<div class="form-group row">
 			<label for="gender" class="col-sm-3">Gender: </label>
-			<InputSelect id="gender" class="form-control col-sm-8" @bind-Value=@Employee.Gender>
+			@*<InputSelect id="gender" class="form-control col-sm-8" @bind-Value=@Employee.Gender>
 				<option value="@(Gender.Male)">Male</option>
 				<option value="@(Gender.Female)">Female</option>
 				<option value="@(Gender.Other)">Other</option>
-			</InputSelect>
+			</InputSelect>*@
+			<InputRadioGroup Name="genderRadioGroup" @bind-Value="@Employee.Gender">
+				Gender:
+				<br/>
+				@foreach (var gender in (Gender[]) Enum.GetValues(typeof(Gender)))
+				{
+					<InputRadio Name="genderRadioGroup" Value="gender"></InputRadio>
+					@gender
+					<br/><br/>
+				}
+			</InputRadioGroup>
 		</div>
 
 		<div class="form-group row">
