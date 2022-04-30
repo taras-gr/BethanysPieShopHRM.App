@@ -40,6 +40,13 @@ namespace BethanysPieShopHRM.App.Pages
         protected string StatusClass = string.Empty;
         protected bool Saved;
 
+        private ElementReference LastNameInput;
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            await LastNameInput.FocusAsync();
+        }
+
         protected override async Task OnInitializedAsync()
         {
             Saved = false;
